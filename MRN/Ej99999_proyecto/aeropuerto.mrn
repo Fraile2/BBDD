@@ -1,6 +1,7 @@
+VUELO(id_vuelo(PK), duracion, fecha_hora_vuelo)
 PERSONA(dni(PK),n_pasaporte(U),nombre,apellidos,fecha_nacimiento)
 CLIENTE(dni(FK:PERSONA)(PK))
-VIAJERO(dni(FK:PERSONA)(PK))
+VIAJERO(dni(FK:PERSONA)(PK), )
 
 
 BILLETE(id_billete(PK), fecha, coste, numero_asiento, tipo, id_viajero(FK:VIAJERO))
