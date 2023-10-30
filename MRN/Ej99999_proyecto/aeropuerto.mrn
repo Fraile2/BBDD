@@ -1,7 +1,16 @@
-VUELO(id_vuelo(PK), duracion, fecha_hora_vuelo)
+
 PERSONA(dni(PK),n_pasaporte(U),nombre,apellidos,fecha_nacimiento)
 CLIENTE(dni(FK:PERSONA)(PK))
-VIAJERO(dni(FK:PERSONA)(PK), id_billete(FK:BILLETE))
+VIAJERO(dni(FK:PERSONA)(PK))
+
+AEROLINEA(id_aerolinea(PK), nombre)
+
+AVION(matricula(PK), marca, modelo)
+PILOTO(id_piloto(PK), nombre, apellidos, antigüedad, numero_galones, id_aerolinea(FK:AEROLINEA))
+VUELO(id_vuelo(PK), duracion, fecha_hora_vuelo)
+PILOTA(id_piloto(FK:PILOTO)(PK), matricula(FK:AVION), id_vuelo(FK:VUELO))
+COPILOTO(id_copiloto(FK:PILOTO)(PK), id_piloto(FK:PILOTO))
+
 
 BILLETE(id_billete(PK), fecha, coste, numero_asiento, tipo, id_viajero(FK:VIAJERO))
 COMPRA(id_cliente(FK:CLIENTE), id_billete(FK:BILLETE), (PK: BILLETE, CLIENTE))
