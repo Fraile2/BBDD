@@ -1,4 +1,4 @@
-
+# Ya esta
 PERSONA(dni(PK),n_pasaporte(U),nombre,apellidos,fecha_nacimiento)
 CLIENTE(dni(FK:PERSONA)(PK))
 VIAJERO(dni(FK:PERSONA)(PK))
