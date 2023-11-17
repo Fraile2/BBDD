@@ -9,11 +9,11 @@ DROP TABLE IF EXISTS ;
 DROP TABLE IF EXISTS ;
 DROP TABLE IF EXISTS ;
 DROP TABLE IF EXISTS ;
-DROP TABLE IF EXISTS ;
+DROP TABLE IF EXISTS billete;
 DROP TABLE IF EXISTS piloto;
 DROP TABLE IF EXISTS viajero;
 DROP TABLE IF EXISTS cliente;
-DROP TABLE IF EXISTS ;
+DROP TABLE IF EXISTS aerolinea;
 DROP TABLE IF EXISTS persona;
 -- CREATE
 CREATE TABLE IF NOT EXISTS persona(
@@ -23,9 +23,11 @@ CREATE TABLE IF NOT EXISTS persona(
     apellido VARCHAR(60) NOT NULL,
     fecha_nacimiento DATE NOT NULL
 );
-CREATE TABLE IF NOT EXISTS aerolinea(
-    id_aerolínea INT auto_increment,
-    nombre
+CREATE TABLE IF NOT EXISTS aerolinea ( -- Jessica 
+    id_aeroline INT AUTO_INCREMENT primary key,
+    nombre VARCHAR(30),
+    id_piloto INT auto_increment,
+    FOREIGN KEY(id_piloto) REFERENCES piloto(id_piloto)
 );
 CREATE TABLE IF NOT EXISTS piloto(
     id_piloto INT auto_increment,
@@ -46,8 +48,14 @@ CREATE TABLE IF NOT EXISTS viajero(
     FOREIGN KEY(dni) REFERENCES persona(dni)
 );
 
-CREATE TABLE IF NOT EXISTS (
-
+CREATE TABLE IF NOT EXISTS billete (
+    id_billete int auto_increment PRIMARY KEY,
+    fecha DATE NOT NULL, 
+    num_asiento VARCHAR(4) NOT NULL,
+    coste numeric(5,2) NOT NULL,
+    tipo ENUM('ida', 'ida_vuelta') NOT NULL,
+    dni_persona VARCHAR(9) CHECK()
+    FOREIGN KEY(dni_persona) references persona(DNI)
 );
 CREATE TABLE IF NOT EXISTS (
 

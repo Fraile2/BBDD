@@ -20,7 +20,8 @@ CLIENTE(
     dni(FK:PERSONA)(PK)
 )
 VIAJERO(
-    dni(FK:PERSONA)(PK)
+    dni(FK:PERSONA)(PK),
+    
 )
 
 AEROLINEA(
@@ -36,18 +37,33 @@ AVION(
 )
 
 VUELO(
-    id_vuelo(PK), duracion, fecha_hora_vuelo)
-PILOTA(
-    id_piloto(FK:PILOTO)(PK), matricula(FK:AVION), id_vuelo(FK:VUELO))
+    id_vuelo(PK), 
+    duracion, 
+    fecha_hora_vuelo
+)
 
-BILLETE(id_billete(PK), fecha, coste, numero_asiento, tipo, id_viajero(FK:VIAJERO))
+PILOTA(
+    id_piloto(FK:PILOTO)(PK), matricula(FK:AVION), id_vuelo(FK:VUELO)
+)
+
+BILLETE(
+    id_billete(PK), 
+    fecha, 
+    coste, 
+    numero_asiento, 
+    tipo
+)
 COMPRA(
     id_cliente(FK:CLIENTE), 
     id_billete(FK:BILLETE), 
     (PK: BILLETE, CLIENTE)
 )
+PUERTA(
+    id_puerta(PK)
+)
+
 TERMINAL(
     id_terminal(PK),
-    
+    id_puerta(FK:PUERTA)
 )
 
