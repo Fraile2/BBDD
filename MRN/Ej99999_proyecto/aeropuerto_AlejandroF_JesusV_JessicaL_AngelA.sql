@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS aeropuertodb_grupo;
-USE aeropuertodb_grupo;
+CREATE DATABASE IF NOT EXISTS aeropuertodb;
+USE aeropuertodb;
 
 -- DROP
 DROP TABLE IF EXISTS piloto_avion_vuelo;
@@ -17,8 +17,8 @@ DROP TABLE IF EXISTS persona;
 
 -- CREATES
 CREATE TABLE IF NOT EXISTS persona (
-    dni VARCHAR(9) CHECK(LENGTH(dni) > 8),
-    n_pasaporte VARCHAR(9) CHECK(LENGTH(n_pasaporte) > 8) NOT NULL,
+    dni VARCHAR(9) CHECK(CHAR_LENGTH(dni) > 8),
+    n_pasaporte VARCHAR(9) CHECK(CHAR_LENGTH(n_pasaporte) > 8) NOT NULL,
     nombre VARCHAR(26) NOT NULL,
     apellidos VARCHAR(60) NOT NULL,
     fecha_nacimiento DATE,
@@ -28,17 +28,18 @@ CREATE TABLE IF NOT EXISTS persona (
 );
 
 CREATE TABLE IF NOT EXISTS cliente (
-    dni VARCHAR(9) CHECK(LENGTH(dni) > 8),
+    dni VARCHAR(9),
 
     PRIMARY KEY (dni),
     FOREIGN KEY (dni) REFERENCES persona(dni) ON UPDATE CASCADE
 );
 
+
 CREATE TABLE IF NOT EXISTS viajero (
-    dni VARCHAR(9) CHECK(LENGTH(dni) > 8),
+    dni VARCHAR(9),
 
     PRIMARY KEY (dni),
-    FOREIGN KEY (dni) REFERENCES cliente(dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni) REFERENCES persona(dni) ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS terminal (
@@ -58,10 +59,10 @@ CREATE TABLE IF NOT EXISTS puerta (
 CREATE TABLE IF NOT EXISTS billete (
     id_billete INT AUTO_INCREMENT,
     fecha DATE NOT NULL,
-    numero_asientos VARCHAR(4) CHECK(LENGTH(numero_asientos) > 3),
+    numero_asientos VARCHAR(4) CHECK(CHAR_LENGTH(numero_asientos) > 3),
     coste NUMERIC(7, 2) NOT NULL,
     tipo ENUM('ida', 'ida_vuelta') NOT NULL,
-    dni_viajero VARCHAR(9) CHECK(LENGTH(dni_viajero) > 8),
+    dni_viajero VARCHAR(9) CHECK(CHAR_LENGTH(dni_viajero) > 8),
 
     PRIMARY KEY (id_billete),
     FOREIGN KEY (dni_viajero) REFERENCES viajero(dni)
@@ -72,7 +73,7 @@ CREATE TABLE IF NOT EXISTS piloto (
     nombre VARCHAR(26) NOT NULL,
     apellidos VARCHAR(60) NOT NULL,
     antiguedad DATE NOT NULL,
-    numero_galones NUMERIC(1) CHECK(LENGTH(numero_galones) < 5) NOT NULL,
+    numero_galones NUMERIC(1) CHECK(CHAR_LENGTH(numero_galones) < 5) NOT NULL,
     id_copiloto INT,
 
     PRIMARY KEY (id_piloto),
@@ -98,7 +99,7 @@ CREATE TABLE IF NOT EXISTS aerolinea (
 
 CREATE TABLE IF NOT EXISTS cliente_billete (
     id_billete INT,
-    dni_cliente VARCHAR(9) CHECK(LENGTH(dni_cliente) > 8),
+    dni_cliente VARCHAR(9) CHECK(CHAR_LENGTH(dni_cliente) > 8),
 
     PRIMARY KEY (id_billete, dni_cliente),
     FOREIGN KEY (dni_cliente) REFERENCES cliente(dni),
@@ -109,7 +110,7 @@ CREATE TABLE IF NOT EXISTS vuelo (
     id_vuelo INT AUTO_INCREMENT,
     duracion DOUBLE NOT NULL,
     fecha_hora_vuelo DATETIME NOT NULL,
-    dni_viajero VARCHAR(9) CHECK(LENGTH(dni_viajero) > 8),
+    dni_viajero VARCHAR(9) CHECK(CHAR_LENGTH(dni_viajero) > 8),
     id_terminal INT NOT NULL,
     id_puerta INT NOT NULL,
 
@@ -124,7 +125,7 @@ CREATE TABLE IF NOT EXISTS piloto_avion_vuelo (
     id_vuelo INT NOT NULL,
     id_piloto INT NOT NULL,
 
-    PRIMARY KEY (matricula, id_vuelo, id_piloto),
+    PRIMARY KEY (matricula),
     FOREIGN KEY (matricula) REFERENCES avion(matricula),
     FOREIGN KEY (id_vuelo) REFERENCES vuelo(id_vuelo),
     FOREIGN KEY (id_piloto) REFERENCES piloto(id_piloto)
