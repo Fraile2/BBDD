@@ -115,3 +115,17 @@ CREATE TABLE IF NOT EXISTS vuelo (
 
     PRIMARY KEY (id_vuelo),
     FOREIGN KEY (dni_viajero) REFERENCES viajero(dni),
+    FOREIGN KEY (id_terminal) REFERENCES terminal(id_terminal),
+    FOREIGN KEY (id_puerta) REFERENCES puerta(id_puerta)
+);
+
+CREATE TABLE IF NOT EXISTS piloto_avion_vuelo (
+    matricula VARCHAR(10) NOT NULL,
+    id_vuelo INT NOT NULL,
+    id_piloto INT NOT NULL,
+
+    PRIMARY KEY (matricula, id_vuelo, id_piloto),
+    FOREIGN KEY (matricula) REFERENCES avion(matricula),
+    FOREIGN KEY (id_vuelo) REFERENCES vuelo(id_vuelo),
+    FOREIGN KEY (id_piloto) REFERENCES piloto(id_piloto)
+);
