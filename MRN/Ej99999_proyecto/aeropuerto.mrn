@@ -1,4 +1,4 @@
-Persona(DNI(pk), N_PASAPORTE(U), apellidos, nombre, fecha_nacimiento)
+Persona(DNI(PK), N_PASAPORTE(U), apellidos, nombre, fecha_nacimiento)
 
 Cliente(DNI (FK:persona)(PK))
 
