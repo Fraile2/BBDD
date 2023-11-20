@@ -115,3 +115,4 @@ CREATE TABLE IF NOT EXISTS vuelo (
 
     PRIMARY KEY (id_vuelo),
     FOREIGN KEY (dni_viajero) REFERENCES viajero(dni),
+);
