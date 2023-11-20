@@ -14,7 +14,7 @@ Puerta(id_puerta(PK), terminal(FK:terminal), vuelo(FK:vuelo)) -- Jesus Santana
 
 Vuelo(id_vuelo(PK), fecha_hora_vuelo, duracion) -- Jessica Lalaleo
 
-Avion(matricula(PK)marca, modelo) -- Jessica Lalaleo
+Avion(matricula(PK), marca, modelo) -- Jessica Lalaleo
 
 Piloto(id_piloto(PK), num_galones, antigüedad, nombre, apellidos, id_copìloto(FK:piloto) aerolinea (FK:aerolinea)) -- Angel Almache
 
