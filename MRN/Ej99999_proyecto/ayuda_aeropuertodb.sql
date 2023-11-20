@@ -37,9 +37,11 @@ CREATE TABLE IF NOT EXISTS cliente (
 
 CREATE TABLE IF NOT EXISTS viajero (
     dni VARCHAR(9),
+    id_billete INT NOT NULL, 
 
     PRIMARY KEY (dni),
-    FOREIGN KEY (dni) REFERENCES persona(dni) ON UPDATE CASCADE
+    FOREIGN KEY (dni) REFERENCES persona(dni) ON UPDATE CASCADE,
+    FOREIGN KEY (id_billete) REFERENCES persona(id_billete)
 );
 
 CREATE TABLE IF NOT EXISTS terminal (
@@ -52,7 +54,7 @@ CREATE TABLE IF NOT EXISTS puerta (
     id_puerta INT AUTO_INCREMENT,
     id_terminal INT,
 
-    PRIMARY KEY (id_puerta),
+    PRIMARY KEY (id_puerta, id_terminal),
     FOREIGN KEY (id_terminal) REFERENCES terminal(id_terminal)
 );
 

@@ -10,7 +10,7 @@ Compra(cliente: (FK:cliente), billete(FK:billete), (PK:cliente, billete)) -- Jes
 
 Terminal(Id_terminal(PK)) -- Jesus Santana
 
-Puerta(id_puerta(PK), terminal(FK:terminal), vuelo(FK:vuelo)) -- Jesus Santana
+Puerta(id_puerta, terminal(FK:terminal), vuelo(FK:vuelo), PK(id_puerta, terminal)) -- Jesus Santana
 
 Vuelo(id_vuelo(PK), fecha_hora_vuelo, duracion) -- Jessica Lalaleo
 
