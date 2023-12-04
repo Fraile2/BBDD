@@ -1,0 +1,11 @@
+Aerolineas 5-10
+pilotos 40-60
+aviones 40-60
+vuelos 40-60
+terminal 5-10
+puertas 10-15
+personas 60
+viajeros 50% personas
+clientes 50% personas
+billete 100% clientes
+ 
