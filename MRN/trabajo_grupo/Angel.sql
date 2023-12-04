@@ -1,0 +1,10 @@
+INSERT INTO terminal (id_terminal, nombre) values (1, "Terminal1");
+INSERT INTO terminal (nombre) values ("Terminal2");
+INSERT INTO terminal (nombre) values ("Terminal3");
+INSERT INTO terminal (nombre) values ("Terminal4");
+INSERT INTO terminal (nombre) values ("Terminal5");
+INSERT INTO terminal (nombre) values ("Terminal6");
+INSERT INTO terminal (nombre) values ("Terminal7");
+INSERT INTO terminal (nombre) values ("Terminal8");
+INSERT INTO terminal (nombre) values ("Terminal9");
+INSERT INTO terminal (nombre) values ("Terminal10");
