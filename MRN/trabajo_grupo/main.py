@@ -10,7 +10,7 @@ def aleatorio():
 def main():
     for i in range(60):
         dni=aleatorio()
-        os.system(f"echo {dni}{LETRAS[dni%23]} >> dnis.txt")
+        os.system(f"echo {dni}{LETRAS[dni%23]} >> alejandro_insert.sql")
 
 
 if __name__=='__main__':
