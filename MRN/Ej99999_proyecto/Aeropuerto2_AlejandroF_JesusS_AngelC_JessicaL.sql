@@ -11,20 +11,12 @@ CREATE TABLE persona(
     UNIQUE(n_pasaporte),
     PRIMARY KEY(dni)
 );
-CREATE TABLE viajero(
-    dni_viajero VARCHAR(9),
-
-    PRIMARY KEY(dni_viajero),
-    FOREIGN KEY(dni_viajero) REFERENCES persona(dni) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 CREATE TABLE cliente(
     dni_cliente VARCHAR(9),
 
     PRIMARY KEY(dni_cliente),
     FOREIGN KEY(dni_cliente) REFERENCES persona(dni) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
 CREATE TABLE avion(
     matricula VARCHAR(10) primary key,
     marca VARCHAR(31) NOT NULL,
@@ -43,6 +35,16 @@ CREATE TABLE billete(
     tipo ENUM('ida', 'ida_vuelta') NOT NULL,
     PRIMARY KEY (id_billete)
 );
+CREATE TABLE viajero(
+    dni_viajero VARCHAR(9),
+    billete INT NOT NULL,
+    vuelo INT NOT NULL,
+
+    PRIMARY KEY(dni_viajero),
+    FOREIGN KEY(dni_viajero) REFERENCES persona(dni) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(billete) REFERENCES billete(id_billete),
+    FOREIGN KEY(vuelo) REFERENCES vuelo(id_vuelo)
+);
 CREATE TABLE compra(
     id_billete INT,
     dni_cliente VARCHAR(9) CHECK(LENGTH(dni_cliente) > 8),
@@ -50,7 +52,6 @@ CREATE TABLE compra(
     FOREIGN KEY (dni_cliente) REFERENCES cliente(dni_cliente),
     FOREIGN KEY (id_billete) REFERENCES billete(id_billete)
 );
-
 CREATE TABLE terminal(
     id_terminal INT AUTO_INCREMENT primary key,
     nombre VARCHAR(25) NOT NULL
