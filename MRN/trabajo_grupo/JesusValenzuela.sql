@@ -6,7 +6,7 @@ INSERT INTO aviones (matricula) VALUES ("D");
 INSERT INTO aviones (matricula) VALUES("7T");
 INSERT INTO aviones (matricula) VALUES ("C3");
 INSERT INTO aviones (matricula) VALUES ("D2");
-INSERT INTO viones (matricula) VALUES ("VP-A");
+INSERT INTO aviones (matricula) VALUES ("VP-A");
 INSERT INTO aviones (matricula) VALUES ("V2");
 INSERT INTO aviones (matricula) VALUES ("F-OG");
 INSERT INTO aviones (matricula) VALUES ("PJ"); 
