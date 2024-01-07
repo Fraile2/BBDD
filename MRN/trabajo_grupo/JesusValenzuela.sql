@@ -1,4 +1,4 @@
--- Jesus Nos vamos ya?
+-- Jesus
 INSERT INTO aviones (matricula) VALUES ("EC");
 INSERT INTO aviones (matricula) VALUES ("YA");
 INSERT INTO aviones (matricula) VALUES ("ZA");

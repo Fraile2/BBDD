@@ -8,9 +8,12 @@ def aleatorio():
     return randint(10000000, 99999999)
 
 def main():
+    dni_lista=[]
     for i in range(60):
         dni=aleatorio()
-        os.system(f"echo {dni}{LETRAS[dni%23]} >> alejandro_insert.sql")
+        dni_lista.append(dni)
+        if not dni in dni_lista:
+            os.system(f"echo {dni}{LETRAS[dni%23]} >> alejandro_insert.sql")
 
 
 if __name__=='__main__':
