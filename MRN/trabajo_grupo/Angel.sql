@@ -1,4 +1,4 @@
-INSERT INTO terminal (id_terminal, nombre) values (1, "Terminal1");
+INSERT INTO terminal (nombre) values ("Terminal1");
 INSERT INTO terminal (nombre) values ("Terminal2");
 INSERT INTO terminal (nombre) values ("Terminal3");
 INSERT INTO terminal (nombre) values ("Terminal4");

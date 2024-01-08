@@ -20,4 +20,4 @@ Piloto(id_piloto(PK), num_galones, antigüedad, nombre, apellidos, id_copìloto(
 
 Pilota(vuelo(FK:vuelo), avion(FK: matricula), piloto(FK:piloto)(PK)) -- Angel Almache
 
-Aerolinea(id_aerolinea(PK), nombre) -- Angel Almache
+Aerolinea(id_aerolinea(PK), nombre) -- Jessica
