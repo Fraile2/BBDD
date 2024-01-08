@@ -59,7 +59,7 @@ INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2010-07-15 09:05:10", 7
 INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2011-08-30 09:10:00", 3.2);
 INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2012-02-03 09:15:00", 2.6);
 INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2011-07-08 09.30:00", 5.00);
-INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2008-06-13 10.00:00",  6);
+INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2008-06-13 10.00:00", 6.00);
 INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2007-07-14 10.05:00", 8.5);
 INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2003-09-17 10.10:00", 16);
 INSERT INTO vuelos (fecha_hora_vuelo, duracion) VALUES ("2007-05-23 10.15:00", 10);
