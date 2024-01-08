@@ -125,3 +125,40 @@ VALUES('84936356R',,1),
 ('34507510N',,5);
 
 INSERT INTO billete(fecha, numero_asiento, coste, tipo)
+VALUES('','',0,'ida_vuelta'), -- Alejandro
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+
+-- Angel
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+
+-- Jesus Santana
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+
+
+-- Jessica
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta'),
+('','',0,'ida_vuelta');
