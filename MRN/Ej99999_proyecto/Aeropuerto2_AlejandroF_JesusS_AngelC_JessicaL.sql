@@ -30,7 +30,7 @@ CREATE TABLE vuelo(
 CREATE TABLE billete(
     id_billete INT AUTO_INCREMENT,
     fecha DATE NOT NULL,
-    numero_asientos VARCHAR(4) CHECK(LENGTH(numero_asientos) > 3),
+    numero_asiento VARCHAR(4) CHECK(LENGTH(numero_asientos) > 3),
     coste NUMERIC(7, 2) NOT NULL,
     tipo ENUM('ida', 'ida_vuelta') NOT NULL,
     PRIMARY KEY (id_billete)
@@ -65,7 +65,7 @@ CREATE TABLE puerta(
     foreign key (terminal) references vuelo(id_vuelo)
 );
 create table aerolinea(
-    id_aerolinea INT NOT NULL primary key,
+    id_aerolinea INT auto_increment NOT NULL primary key,
     nombre varchar(60) NOT NULL
 );
 create table piloto(
